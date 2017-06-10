@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration form </title>
+	<link rel="stylesheet" type="text/css" href="/home/prabhat/Desktop/bootstrap/css/bootstrap.min.css">
+</head>
+<body class="container">
+<h2>Register here</h2>
+	<form class="form-group">
+		<div class="row">
+			<label>First name</label>
+			<div>
+				<input type="text" name="fname" onmouseout="firstname()" id="first_name" class="col-lg-13 form-control">
+			</div>
+			<p id="fnc"></p>
+			<label>Last name</label>
+			<div>
+				<input type="text" name="lname" onmouseout="lastname()" id="last_name" class="col-lg-13 form-control">
+			</div>
+			<p id="lnc"></p>
+			<label>Phone number</label>
+			<div>
+				<input type="text" name="phn" onmouseout="phonenumber()" id="phone_number" class="col-lg-13 form-control">
+			</div>
+			<p id="pnc"></p>
+			<label>E-mail</label>
+			<div>
+				<input type="text" name="eml" onmouseout="email2()" id="email" class="col-lg-13 form-control">
+			</div>
+			<p id="ec"></p>
+			<label>State</label>
+			<select id="opt" class="form-control" onmouseout="state()">
+				<option id="opt1">Select any one of the below</option>
+				<option>Andhra Pradesh</option>
+				<option>Arunachal Pradesh</option>
+				<option>Assam</option>
+				<option>Bihar</option>
+				<option>Chattisghar</option>
+				<option>Goa</option>
+				<option>Gujarat</option>
+				<option>Haryana</option>
+				<option>Himachal Pradesh</option>
+				<option>Jammu and Kashmir</option>
+				<option>Jharkhand</option>
+				<option>Karnataka</option>
+				<option>Kerala</option>
+				<option>Madhya Pradesh</option>
+				<option>Maharastra</option>
+				<option>Manipur</option>
+				<option>Meghalaya</option>
+				<option>Mizoram</option>
+				<option>Nagaland</option>
+				<option>Orissa</option>
+				<option>Punjab</option>
+				<option>Rajasthan</option>
+				<option>Sikkim</option>
+				<option>Tamil Nadu</option>
+				<option>Telangana</option>
+				<option>Uttarakhand</option>
+				<option>Uttar Pradesh</option>
+				<option>West Bengal</option>
+				<option>One of the Union Territory</option>
+			</select><br>
+			<label>Password</label>
+			<div>
+				<input type="password" onmouseout="pwd()" name="pass" id="pswd" class="col-lg-13 form-control">
+			</div>
+			<p id="pc"></p>
+			<label>Confirm Password</label>
+			<div>
+				<input type="password" onmouseout="cnfpwd()" name="pass1" id="cnfpswd" class="col-lg-13 form-control">
+			</div>
+			<p id="p1c"></p>
+			<button type="submit" id="sub" class="btn btn-primary btn-block">Submit</button>
+		</div>
+	</form>
+	<script type="text/javascript">
+		{
+			function firstname() {
+				var fn = document.getElementById("first_name").value;
+				var n = fn.length;
+				if (n <= 0) {
+					document.getElementById("first_name").style.borderColor = "red";
+					document.getElementById("fnc").innerHTML = "First name should not be empty";
+					document.getElementById("sub").disabled = true;
+				}
+				else {
+					document.getElementById("first_name").style.borderColor = "#52FF33";
+					document.getElementById("sub").disabled = false;
+				}
+			}
+			function lastname() {
+				var ln = document.getElementById("last_name").value;
+				var n2 = ln.length;
+				if (n2 <= 0) {
+					document.getElementById("last_name").style.borderColor = "red";
+					document.getElementById("lnc").innerHTML = "Last name should not be empty";
+					document.getElementById("sub").disabled = true;
+				}
+				else {
+					document.getElementById("last_name").style.borderColor = "#52FF33";
+					document.getElementById("sub").disabled = false;
+				}
+			}
+
+			function phonenumber() {
+				var phnnum = document.getElementById("phone_number").value;
+				var pl = phnnum.length;
+				var i=0;
+				if (pl == 10) {
+					for(i; phnnum[0]>=7 && phnnum[0]<=9 && phnnum[i]>=0 && phnnum[i]<=9; i++){
+						document.getElementById("phone_number").style.borderColor = "#52FF33";
+						document.getElementById("sub").disabled = false;
+					}
+				}	
+				else {
+					document.getElementById("phone_number").style.borderColor = "red";
+					document.getElementById("pnc").innerHTML = "Your phone number should be 10 characters long and should not contain any alphabets or special characters";
+					document.getElementById("sub").disabled = true;
+				}
+
+			}
+
+			function pwd() {
+				var pswd = document.getElementById("pswd").value;
+				var len = pswd.length;
+				if(len <= 5) {
+					document.getElementById("pswd").style.borderColor = "red";
+					document.getElementById("pc").innerHTML = "Your password should be atleast 6 characters long";
+					document.getElementById("sub").disabled = true;
+				}
+				else {
+					document.getElementById("pswd").style.borderColor = "#52FF33";
+					document.getElementById("sub").disabled = false;
+				}
+			}
+
+			function cnfpwd() {
+				var pswd1 = document.getElementById("pswd").value;
+				var pswd2 = document.getElementById("cnfpswd").value;
+				if (pswd1 != pswd2 || pswd2.length == 0) {
+					document.getElementById("cnfpswd").style.borderColor = "red";
+					document.getElementById("p1c").innerHTML = "Your password and confirm password fields are not matching";
+					document.getElementById("sub").disabled = true;
+				}
+				else {
+					document.getElementById("cnfpswd").style.borderColor = "#52FF33";
+					document.getElementById("sub").disabled = false;
+				}
+			}
+
+			function email2() {
+				var x = document.getElementById("email").value;
+				var atpos = x.indexOf("@");
+				var dotpos = x.indexOf(".");
+				var l = x.length;
+				if (atpos <= 1 || dotpos-atpos<2 || l-dotpos<2) {
+					document.getElementById("email").style.borderColor = "red";
+					document.getElementById("ec").innerHTML = "Your email should contain a “at-the-rate” (@) followed by a “dot” (.). There should be at least one character followed by the @ followed by at least 1 more character followed by a dot followed by at least 2 characters"
+					document.getElementById("sub").disabled = true;
+				}
+				else {
+					document.getElementById("email").style.borderColor = "#52FF33";
+					document.getElementById("sub").disabled = false;
+				}
+			}
+
+			function state() {
+				var x = document.getElementById("opt").value;
+				var y = document.getElementById("opt1").value;
+				if (x == y) {
+					document.getElementById("opt").style.borderColor = "red";
+					document.getElementById("sub").disabled = true;
+				}
+				else {
+					document.getElementById("opt").style.borderColor = "#52FF33";
+					document.getElementById("sub").disabled = false;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

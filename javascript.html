@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fading of divs</title>
+	<style>
+		#div1 {
+			text-align: center;
+			font-size: 25px;
+			-webkit-animation:adiv 3s ease-in infinite;
+		}
+
+		#div2 {
+			text-align: center;
+			font-size: 25px;
+			-webkit-animation:adiv 3s ease-in infinite;
+		}
+
+		#div3 {
+			text-align: center;
+			font-size: 25px;
+			-webkit-animation:adiv 3s ease-in infinite;
+		}
+
+		@-webkit-keyframes adiv{
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1.0;
+			}
+		}
+
+	</style>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<script>
+	var x = ["abc", "def", "ghi"];
+	window.onload = actualfunction();
+
+	function actualfunction() {
+		setTimeout(d1,0);
+		setTimeout(d2,3000);
+		setTimeout(d3,6000);
+	};
+
+	function d1() {
+		setInterval(d1,9000);
+		document.getElementById("div1").innerHTML = x[0];
+	};
+
+	function d2() {
+		setInterval(d2,9000);
+		document.getElementById("div1").innerHTML = x[1];
+	};
+
+	function d3() {
+		setInterval(d3,9000);
+		document.getElementById("div1").innerHTML = x[2];
+	};
+</script>
+</body>
+</html>
