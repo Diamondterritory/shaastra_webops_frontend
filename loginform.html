@@ -3,33 +3,38 @@
 <head>
 	<title>Registration form </title>
 	<link rel="stylesheet" type="text/css" href="/home/prabhat/Desktop/bootstrap/css/bootstrap.min.css">
+	<style>
+		body {
+			background-color: #f5f5f5;
+		}
+	</style>
 </head>
 <body class="container">
-<h2>Register here</h2>
+<h1 class="text-center">Register here</h1>
 	<form class="form-group">
 		<div class="row">
 			<label>First name</label>
 			<div>
-				<input type="text" name="fname" onmouseout="firstname()" id="first_name" class="col-lg-13 form-control">
+				<input type="text" name="fname" onkeyup="firstname()" id="first_name" class="col-xs-8 form-control">
 			</div>
 			<p id="fnc"></p>
 			<label>Last name</label>
 			<div>
-				<input type="text" name="lname" onmouseout="lastname()" id="last_name" class="col-lg-13 form-control">
+				<input type="text" name="lname" onkeyup="lastname()" id="last_name" class="col-xs-8 form-control">
 			</div>
 			<p id="lnc"></p>
 			<label>Phone number</label>
 			<div>
-				<input type="text" name="phn" onmouseout="phonenumber()" id="phone_number" class="col-lg-13 form-control">
+				<input type="text" name="phn" onkeyup="phonenumber()" id="phone_number" class="col-xs-8 form-control">
 			</div>
 			<p id="pnc"></p>
 			<label>E-mail</label>
 			<div>
-				<input type="text" name="eml" onmouseout="email2()" id="email" class="col-lg-13 form-control">
+				<input type="text" name="eml" onkeyup="email2()" id="email" class="col-xs-8 form-control">
 			</div>
 			<p id="ec"></p>
 			<label>State</label>
-			<select id="opt" class="form-control" onmouseout="state()">
+			<select id="opt" class="form-control" onkeyup="state()">
 				<option id="opt1">Select any one of the below</option>
 				<option>Andhra Pradesh</option>
 				<option>Arunachal Pradesh</option>
@@ -63,12 +68,12 @@
 			</select><br>
 			<label>Password</label>
 			<div>
-				<input type="password" onmouseout="pwd()" name="pass" id="pswd" class="col-lg-13 form-control">
+				<input type="password" onkeyup="pwd()" name="pass" id="pswd" class="col-xs-8 form-control">
 			</div>
 			<p id="pc"></p>
 			<label>Confirm Password</label>
 			<div>
-				<input type="password" onmouseout="cnfpwd()" name="pass1" id="cnfpswd" class="col-lg-13 form-control">
+				<input type="password" onkeyup="cnfpwd()" name="pass1" id="cnfpswd" class="col-xs-8 form-control">
 			</div>
 			<p id="p1c"></p>
 			<button type="submit" id="sub" class="btn btn-primary btn-block">Submit</button>
